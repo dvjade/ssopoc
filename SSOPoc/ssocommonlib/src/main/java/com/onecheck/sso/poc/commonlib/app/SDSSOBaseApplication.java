@@ -12,7 +12,6 @@ import com.parse.ParseACL;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-import one.sdsso.deepak.com.sdssolib.provider.CustomParseUser;
 
 /**
  * Created by deepak on 15/4/15.
@@ -54,7 +53,7 @@ public class SDSSOBaseApplication extends Application {
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
 
-        ParseObject.registerSubclass(CustomParseUser.class);
+//        ParseObject.registerSubclass(CustomParseUser.class);
 
         // Add your initialization code here
         Parse.initialize(this, "NbEpQiyjZmH8b4OkHN8kpNSjuhpWfyOsKqOVQkV1", "1E2bVxBHPDLX3m2LF8DbMb0qSPB5TqJgHoNLNpxc");
