@@ -14,9 +14,7 @@ import com.parse.ParseQuery;
 
 import java.util.List;
 
-/**
- * Created by deepak on 5/8/15.
- */
+
 public class InstallationReceiver extends BroadcastReceiver {
 
     public static final String ACTION = "com.onecheck.sso.poc.commonlib.receiver.InstallationReceiver";
