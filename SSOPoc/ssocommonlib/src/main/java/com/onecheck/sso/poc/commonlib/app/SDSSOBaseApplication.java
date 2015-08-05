@@ -38,11 +38,11 @@ public class SDSSOBaseApplication extends Application {
                     break;
                 }
             }
-            if (!match) {
-                Logger.log("App is not signed using the correct Keystore. Not allowing to continue.");
-                Toast.makeText(this, "App is not signed using the correct Keystore. Not allowing to continue.", Toast.LENGTH_LONG).show();
-                System.exit(0);
-            }
+//            if (!match) {
+//                Logger.log("App is not signed using the correct Keystore. Not allowing to continue.");
+//                Toast.makeText(this, "App is not signed using the correct Keystore. Not allowing to continue.", Toast.LENGTH_LONG).show();
+//                System.exit(0);
+//            }
         } catch (PackageManager.NameNotFoundException nnfex) {
             Logger.log("Error in getting the signature of the app.");
         }
