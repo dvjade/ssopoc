@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import com.onecheck.sso.poc.commonlib.db.PreferencesManager;
 import com.onecheck.sso.poc.commonlib.utils.Logger;
 
 public class LoginReceiver extends BroadcastReceiver{
@@ -17,8 +18,16 @@ public class LoginReceiver extends BroadcastReceiver{
 
         if(ACTION.equals(intent.getAction())){
 
-            Logger.log("Login interrupt by"+intent.getStringExtra(INTENT_PACKAGENAME_ARG));
-            //start service
+            //check for null
+            //Todo check receiving from known packages
+            if(intent.hasExtra(INTENT_PACKAGENAME_ARG)){
+
+                Logger.log("Login interrupt by"+intent.getStringExtra(INTENT_PACKAGENAME_ARG));
+                PreferencesManager preferencesManager=PreferencesManager.getInstance(context);
+                preferencesManager.writeToPrefs(PreferencesManager.LOGIN_DATA_PROV_PACKAGE,
+                        intent.getStringExtra(INTENT_PACKAGENAME_ARG));
+
+            }
         }
             else {
               Logger.log("Interrupt not registered");

@@ -12,6 +12,9 @@ public class PreferencesManager {
     private static SharedPreferences.Editor prefsEditor;
     private static PreferencesManager preferenceManager;
 
+    //Preference value keys.
+    public static String LOGIN_DATA_PROV_PACKAGE;
+
     private PreferencesManager(Context context) {
         preferences = android.preference.PreferenceManager.getDefaultSharedPreferences(context);
         prefsEditor = preferences.edit();
