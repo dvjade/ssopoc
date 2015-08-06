@@ -13,7 +13,8 @@ public class PreferencesManager {
     private static PreferencesManager preferenceManager;
 
     //Preference value keys.
-    public static String LOGIN_DATA_PROV_PACKAGE;
+    public static String LOGIN_DATA_PROV_PACKAGE_NAME="LOGIN_APP_PACKAGE_NAME";
+    public static String ACCESS_TOKEN="ACCESS_TOKEN";
 
     private PreferencesManager(Context context) {
         preferences = android.preference.PreferenceManager.getDefaultSharedPreferences(context);
@@ -84,6 +85,12 @@ public class PreferencesManager {
 
     public long getLong(String key, long defaultValue) {
         return preferences.getLong(key, defaultValue);
+    }
+
+
+    public void deleteString(String key){
+         prefsEditor.remove(key);
+         prefsEditor.commit();
     }
 
 }

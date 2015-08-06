@@ -24,7 +24,7 @@ public class LoginReceiver extends BroadcastReceiver{
 
                 Logger.log("Login interrupt by"+intent.getStringExtra(INTENT_PACKAGENAME_ARG));
                 PreferencesManager preferencesManager=PreferencesManager.getInstance(context);
-                preferencesManager.writeToPrefs(PreferencesManager.LOGIN_DATA_PROV_PACKAGE,
+                preferencesManager.writeToPrefs(PreferencesManager.LOGIN_DATA_PROV_PACKAGE_NAME,
                         intent.getStringExtra(INTENT_PACKAGENAME_ARG));
 
             }
